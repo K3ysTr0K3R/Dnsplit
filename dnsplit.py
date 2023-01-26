@@ -19,7 +19,7 @@ def start():
 	print("")
 	banner = pyfiglet.figlet_format("DN-SPLIT")
 	print(G + banner)
-	print(f"{G}[{B}!!!{G}] {Y}Tool-Name {G}: {C}Domainer")
+	print(f"{G}[{B}!!!{G}] {Y}Tool-Name {G}: {C}DN-SPLIT")
 	print(f"{G}[{B}!!!{G}] {Y}Github    {G}: {C}https://github.com/K3ysTr0K3R")
 	print(f"{G}[{B}!!!{G}] {Y}Instagram {G}: {C}jaredbrts175")
 	print(f"{G}[{B}!!!{G}] {Y}Coded By  {G}: {C}K3ysTr0K3R")
