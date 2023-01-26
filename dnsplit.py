@@ -47,9 +47,9 @@ def check_subdomain(subdomain, target):
 		server_name = server.get("Server")
 		response_code = send_get_req.status_code
 		if not server_name:
-			print(f"{G}[{B}+{G}] {Y}{dns} {G}[{C}{ip_address}{G}] {G}[{M}No-Server{G}] [{response_code}]")
+			print(f"{G}[{B}+{G}] {Y}{dns} {G}[{C}{ip_address}{G}] {G}[{R}No-Server{G}] {G}[{C}{response_code}{G}]")
 		else:
-			print(f"{G}[{B}+{G}] {Y}{dns} {G}[{C}{ip_address}{G}] {G}[{M}{server_name}{G}] [{response_code}]")
+			print(f"{G}[{B}+{G}] {Y}{dns} {G}[{C}{ip_address}{G}] {G}[{M}{server_name}{G}] {G}[{C}{response_code}{G}]")
 	except socket.gaierror:
 		print("")
 	except requests.ConnectionError:
