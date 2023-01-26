@@ -1,0 +1,6 @@
+os
+socket
+requests
+pyfiglet
+colorama
+concurrent.futures
