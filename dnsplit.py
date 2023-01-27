@@ -64,6 +64,8 @@ try:
 	else:
 		wordlist_option = input(f"""{G}[{M}1{G}] {M}subdomains-small.txt
 {G}[{M}2{G}] {M}subdomains-top1mil-20000.txt
+{G}[{M}3{G}] {M}subdomains-top1mil-5000.txt
+{G}[{M}4{G}] {M}subdomains-top1mil.txt
 
 {G}[{Y}i{G}] First things first, pick an option for the wordlist you want to use for {R}{target}{B}: """)
 		if (wordlist_option == "1"):
@@ -77,6 +79,7 @@ try:
 					for line in file:
 						subdomain = line.strip()
 						executor.submit(check_subdomain, subdomain, target)
+
 		elif (wordlist_option == "2"):
 			start()
 			print(f"{G}[{Y}i{G}] Option {R}{wordlist_option} {G}selected")
@@ -88,6 +91,31 @@ try:
 					for line in file:
 						subdomain = line.strip()
 						executor.submit(check_subdomain, subdomain, target)
+		
+		elif (wordlist_option == "3"):
+			start()
+			print(f"{G}[{Y}i{G}] Option {R}{wordlist_option} {G}selected")
+			print(f"{G}[{Y}i{G}] Now using the {R}subdomains-top1mil-5000.txt {G}wordlist")
+			print(f"{G}[{Y}i{G}] Starting subdomain enumeration on {R}{target}")
+			print("")
+			with open(f"subdomains-top1mil-5000.txt", "r") as file:
+				with ThreadPoolExecutor() as executor:
+					for line in file:
+						subdomain = line.strip()
+						executor.submit(check_subdomain, subdomain, target)
+		elif (wordlist_option == "4"):
+			start()
+			print(f"{G}[{Y}i{G}] Option {R}{wordlist_option} {G}selected")
+			print(f"{G}[{Y}i{G}] Now using the {R}subdomains-top1mil.txt {G}wordlist")
+			print(f"{G}[{Y}i{G}] Starting subdomain enumeration on {R}{target}")
+			print("")
+			with open(f"subdomains-top1mil.txt", "r") as file:
+				with ThreadPoolExecutor() as executor:
+					for line in file:
+						subdomain = line.strip()
+						executor.submit(check_subdomain, subdomain, target)
+		else:
+			print(f"{G}[{R}!{G}] You must choose an option")
 except KeyboardInterrupt:
 	print(f"\n{G}[{R}!{G}] User aborted the script")
 	exit()
