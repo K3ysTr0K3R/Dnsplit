@@ -116,6 +116,7 @@ try:
 						subdomain = line.strip()
 						executor.submit(check_subdomain, subdomain, target)
 		else:
+			start()
 			print(f"{G}[{R}!{G}] You must choose an option")
 except KeyboardInterrupt:
 	print(f"\n{G}[{R}!{G}] User aborted the script")
