@@ -103,6 +103,7 @@ try:
 					for line in file:
 						subdomain = line.strip()
 						executor.submit(check_subdomain, subdomain, target)
+						
 		elif (wordlist_option == "4"):
 			start()
 			print(f"{G}[{Y}i{G}] Option {R}{wordlist_option} {G}selected")
