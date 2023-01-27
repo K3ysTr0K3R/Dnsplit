@@ -53,7 +53,7 @@ def check_subdomain(subdomain, target):
 	except socket.gaierror:
 		print("")
 	except requests.ConnectionError:
-		print(f"{G}[{R}~{G}] {Y}{dns} {G}[{R}No-Subdomain{G}] {G}[{R}No-Server{G}] {G}[{R}No-Response-Code{G}]")
+		print(f"{G}[{R}~{G}] {R}{dns} {G}[{R}No-Subdomain{G}] {G}[{R}No-Server{G}] {G}[{R}No-Response-Code{G}]")
 
 try:
 	target = input(f"{G}[{Y}i{G}] {G}Insert your target domain here without www{B}: {R}")
