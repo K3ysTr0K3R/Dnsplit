@@ -80,7 +80,7 @@ try:
 		elif (wordlist_option == "2"):
 			start()
 			print(f"{G}[{Y}i{G}] Option {R}{wordlist_option} {G}selected")
-			print(f"{G}[{Y}i{G}] Now using the {R}subdomains-top1mil-20000 {G}wordlist")
+			print(f"{G}[{Y}i{G}] Now using the {R}subdomains-top1mil-20000.txt {G}wordlist")
 			print(f"{G}[{Y}i{G}] Starting subdomain enumeration on {R}{target}")
 			print("")
 			with open(f"subdomains-top1mil-20000.txt", "r") as file:
