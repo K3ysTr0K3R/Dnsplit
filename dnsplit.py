@@ -62,13 +62,32 @@ try:
 		print(f"{G}[{R}!{G}] You must insert your target domain")
 		exit()
 	else:
-		print(f"{G}[{Y}i{G}] Starting subdomain enumeration on {R}{target}")
-		print("")
-	with open("subdomains.txt", "r") as file:
-		with ThreadPoolExecutor() as executor:
-			for line in file:
-				subdomain = line.strip()
-				executor.submit(check_subdomain, subdomain, target)
+		wordlist_option = input(f"""{G}[{M}1{G}] {M}subdomains-small.txt
+{G}[{M}2{G}] {M}subdomains-top1mil-20000.txt
+
+{G}[{Y}i{G}] First things first, pick an option for the wordlist you want to use for {R}{target}{B}: """)
+		if (wordlist_option == "1"):
+			start()
+			print(f"{G}[{Y}i{G}] Option {R}{wordlist_option} {G}selected")
+			print(f"{G}[{Y}i{G}] Now using the {R}subdomains-small.txt {G}wordlist")
+			print(f"{G}[{Y}i{G}] Starting subdomain enumeration on {R}{target}")
+			print("")
+			with open(f"subdomains-small.txt", "r") as file:
+				with ThreadPoolExecutor() as executor:
+					for line in file:
+						subdomain = line.strip()
+						executor.submit(check_subdomain, subdomain, target)
+		elif (wordlist_option == "2"):
+			start()
+			print(f"{G}[{Y}i{G}] Option {R}{wordlist_option} {G}selected")
+			print(f"{G}[{Y}i{G}] Now using the {R}subdomains-top1mil-20000 {G}wordlist")
+			print(f"{G}[{Y}i{G}] Starting subdomain enumeration on {R}{target}")
+			print("")
+			with open(f"subdomains-top1mil-20000.txt", "r") as file:
+				with ThreadPoolExecutor() as executor:
+					for line in file:
+						subdomain = line.strip()
+						executor.submit(check_subdomain, subdomain, target)
 except KeyboardInterrupt:
 	print(f"\n{G}[{R}!{G}] User aborted the script")
 	exit()
