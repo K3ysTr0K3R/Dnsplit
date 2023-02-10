@@ -30,6 +30,7 @@ try:
 	connect_google = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	CONNECTION = connect_google.connect_ex(('www.google.com',80))
 	if (CONNECTION == 0):
+		print(f"{B}========================================================")
 		print(f"{G}[{B}+++{G}] Internet Connection Established{B}: {C}Proceeding")
 		print(f"{B}========================================================")
 		start()
@@ -74,7 +75,7 @@ try:
 			print(f"{G}[{Y}i{G}] Now using the {R}subdomains-small.txt {G}wordlist")
 			print(f"{G}[{Y}i{G}] Starting subdomain enumeration on {R}{target}")
 			print("")
-			with open(f"subdomains-small.txt", "r") as file:
+			with open("subdomains-small.txt", "r") as file:
 				with ThreadPoolExecutor() as executor:
 					for line in file:
 						subdomain = line.strip()
@@ -86,7 +87,7 @@ try:
 			print(f"{G}[{Y}i{G}] Now using the {R}subdomains-top1mil-20000.txt {G}wordlist")
 			print(f"{G}[{Y}i{G}] Starting subdomain enumeration on {R}{target}")
 			print("")
-			with open(f"subdomains-top1mil-20000.txt", "r") as file:
+			with open("subdomains-top1mil-20000.txt", "r") as file:
 				with ThreadPoolExecutor() as executor:
 					for line in file:
 						subdomain = line.strip()
@@ -98,7 +99,7 @@ try:
 			print(f"{G}[{Y}i{G}] Now using the {R}subdomains-top1mil-5000.txt {G}wordlist")
 			print(f"{G}[{Y}i{G}] Starting subdomain enumeration on {R}{target}")
 			print("")
-			with open(f"subdomains-top1mil-5000.txt", "r") as file:
+			with open("subdomains-top1mil-5000.txt", "r") as file:
 				with ThreadPoolExecutor() as executor:
 					for line in file:
 						subdomain = line.strip()
@@ -110,7 +111,7 @@ try:
 			print(f"{G}[{Y}i{G}] Now using the {R}subdomains-top1mil.txt {G}wordlist")
 			print(f"{G}[{Y}i{G}] Starting subdomain enumeration on {R}{target}")
 			print("")
-			with open(f"subdomains-top1mil.txt", "r") as file:
+			with open("subdomains-top1mil.txt", "r") as file:
 				with ThreadPoolExecutor() as executor:
 					for line in file:
 						subdomain = line.strip()
