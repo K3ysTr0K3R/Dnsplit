@@ -35,6 +35,7 @@ try:
 		print(f"{B}========================================================")
 		start()
 except socket.gaierror:
+    print(f"{B}========================================================")
 	print(f"{G}[{R}!!!{G}] No Internet Connection Found{B}: {R}Exiting")
 	print(f"{B}========================================================")
 	exit()
@@ -47,14 +48,12 @@ def check_subdomain(subdomain, target):
 		ip_address = socket.gethostbyname(dns)
 		server_name = server.get("Server")
 		response_code = send_get_req.status_code
-		if not server_name:
-			print(f"{G}[{B}+{G}] {Y}{dns} {G}[{C}{ip_address}{G}] {G}[{R}No-Server{G}] {G}[{C}{response_code}{G}]")
-		else:
+		if server_name:
 			print(f"{G}[{B}+{G}] {Y}{dns} {G}[{C}{ip_address}{G}] {G}[{M}{server_name}{G}] {G}[{C}{response_code}{G}]")
 	except socket.gaierror:
 		print("")
 	except requests.ConnectionError:
-		print(f"{G}[{R}~{G}] {R}{dns} {G}[{R}No-Subdomain{G}] {G}[{R}No-Server{G}] {G}[{R}No-Response-Code{G}]")
+		pass
 
 try:
 	target = input(f"{G}[{Y}i{G}] {G}Insert your target domain here without www{B}: {R}")
