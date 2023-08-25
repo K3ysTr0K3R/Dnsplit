@@ -4,7 +4,6 @@ Dnsplit is a Python-based tool designed for efficiently discovering sub-domains.
 Features ✨
 
     Fast Sub-Domain Enumeration: Dnsplit is optimized for speed, helping you quickly find relevant sub-domains. 💨
-
     Ethical Hacking Focus: While I'm a beginner, I've crafted Dnsplit with ethical hacking in mind. It's meant to assist fellow pentesters in their security assessments. 🛡️
 
 # Getting Started 🚀
@@ -44,6 +43,6 @@ If you're interested in contributing to Dnsplit, even with minor improvements or
 
 # Contact 📬
 
-Got questions, suggestions, or just want to chat? Feel free to reach out via instagram @1_k3ystr0k3r_1
+Got questions, suggestions, or just want to chat? Feel free to reach out to me via instagram @1_k3ystr0k3r_1
 
 Dnsplit might be a product of my journey as a beginner, but it's my way of contributing to the ethical hacking community. Here's to fruitful sub-domain discoveries and comprehensive security assessments! Happy hacking! 🔒🌟
